@@ -1,0 +1,45 @@
+create table class_schedule
+(branch varchar2(10),year int,day varchar2(10),period1 varchar2(10),
+period2 varchar2(10),period3 varchar2(10),period4 varchar2(10),
+period5 varchar2(10),period6 varchar2(10),period7 varchar2(10));
+
+desc class_schedule;
+
+create table faculty(fid int primary key,fname varchar2(20),subject varchar2(20),Branch varchar2(10),year int);
+
+ALTER TABLE faculty ADD PRIMARY KEY (fid);
+
+desc faculty;
+
+create table events(ename varchar2(20),epalce varchar2(20),ecoordinator varchar2(20));
+
+create table placement(branch varchar2(20),year int,companyname varchar2(20),dateofdrive date);
+
+create table examination(subject varchar2(20),room_no int,fid int,examtiming date,shift varchar2(10));
+
+create table results(sid int,sname varchar2(20),sfathername varchar2(20),
+rollno int,subject1 varchar2(20),subject2 varchar2(20),
+subject3 varchar2(20),subject4 varchar2(20),subject5 varchar2(20),subject6 varchar2(20),marks int,totalmarks int,
+status varchar2(10),backpapers varchar2(20),foreign key(sid) references student(sid));
+
+
+create table student(sid int primary key,sname varchar2(20),
+sfathername varchar2(20),rollno int,phone int,email varchar2(20),
+tenthmarks int, twelfthmarks int,branch varchar2(20),year int);
+
+create table application_form(sname varchar2(20),sfathername varchar2(20),phone int,email varchar2(50),
+tenthmarks int,twelfthmarks int,coursetaken varchar2(20),Address varchar2(100));
+
+create table alumini(aid int primary key,sid int,aname varchar2(50),foreign key(sid) references student(sid));
+
+create table staff_meetings(fid int,fname varchar2(20),mettingroom int,foreign key(fid) references faculty(fid));
+
+
+for table product:
+
+SELECT YEAR(date) as SalesYear,
+         MONTH(date) as SalesMonth,
+         SUM(Price) AS TotalSales
+    FROM Sales
+GROUP BY YEAR(date), MONTH(date)
+ORDER BY YEAR(date), MONTH(date)
