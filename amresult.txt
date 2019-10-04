@@ -1,0 +1,47 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<%@ page import="com.collegeapplication.model.CollegeResult"%>
+<%@  taglib  prefix="c"   uri="http://java.sun.com/jsp/jstl/core"  %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<form action="" method="post">
+
+		<table>
+		<h1 align="center"><B>STUDENT MARKSHEET FORM</B></h1>
+			<tr>
+			    <td>Student Name</td>
+				<td><input type=text name=stn size=30></td>
+				<td>Student Sid</td>
+				<td><input type=text name=sn size=30></td>
+			</tr>
+			<tr>
+				<td>Father's Name</td>
+				<td><input type=text name=fn size=30></td>
+				<td>Dob</td>
+				<td><input type=text name=dob size=30></td>
+			</tr>
+			<table border=1 width=100%>
+				<tr><th><i>Subject code</i></th><th><i>Subject name</i></th><th><i>Min marks</i></th><th><i>Max marks</i></th><th><i>Marks obtained</i></th><th><i>Remark</i></th></tr>
+				
+				<tr><td>101</td><td>Mechanics</td><td>35</td><td>100</td><td><input type="number" name="sub1"> </td><td><input type="text" name="statusdata1"></td></tr>
+				<tr><td>102</td><td>English</td><td>35</td><td>100</td><td><input type="number" name="sub2"> </td><td> <input type="text" name="statusdata2"></td></tr>
+				<tr><td>103</td><td>Maths</td><td>35</td><td>100</td><td><input type="number" name="sub3"> </td><td> <input type="text" name="statusdata3"></td></tr>
+				<tr><td>104</td><td>Physics</td><td>35</td><td>100</td><td><input type="number" name="sub4"> </td><td><input type="text" name="statusdata4"> </td></tr>
+				<tr><td>105</td><td>Chemistry</td><td>35</td><td>100</td><td><input type="number" name="sub5"></td><td><input type="text" name="statusdata5"></td></tr>
+				
+				<tr><td></td><td></td><td><b>Total</b></td><td><b>500</b></td><td><input type="number" name="resultdata"></td><td></td></tr>
+			</table>
+			<tr>
+				<td><input type=submit></td>
+				<td><input type=reset></td>
+			</tr>
+		</table>
+		
+	</form>
+</body>
+</html>
